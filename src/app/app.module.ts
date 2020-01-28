@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DndComponent } from './dnd/dnd.component';
+import { DndDirective } from './dnd/directive/dnd.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DndComponent
+    DndComponent,
+    DndDirective
   ],
   imports: [
     BrowserModule,
