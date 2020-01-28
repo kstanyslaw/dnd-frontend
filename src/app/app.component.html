@@ -1,4 +1,15 @@
-<div>
-  <button class="btn btn-outline-primary" type="button" (click)="filePicker.click()">Pick Image</button>
-  <input type="file" hidden #filePicker>
-</div>
+<form (submit)="onSave()" [formGroup]="form">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" formControlName="title">
+    <small class="form-text text-muted">please, type your title here</small>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-outline-primary" type="button" (click)="filePicker.click()">Pick Image</button>
+    <input type="file" hidden #filePicker (change)="onImagePicked($event)" multiple>
+  </div>
+  <div class="image-preview" *ngFor="let imagePreview of imagePreviews">
+    <img [src]="imagePreview" [alt]="form.value.title" *ngIf="imagePreview !== '' && imagePreview">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
