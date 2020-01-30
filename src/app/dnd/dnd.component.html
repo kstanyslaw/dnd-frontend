@@ -1,4 +1,4 @@
-<div class="dropzone">
+<div class="dropzone" appDnd (fileDropped)="OnFileDropped($event)">
     <input type="file" name="fileDropRef" id="fileDropRef" #fileDropRef multiple>
     <!-- (change)="fileBrowserHandler($event.target.files" -->
     <!-- <img src="https://cdn.onlinewebfonts.com/svg/img_300757.png" alt=""> -->
